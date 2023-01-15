@@ -1,3 +1,11 @@
+
+.footer {
+    background: #034492;
+    color: white;
+    padding: 3em;
+    text-align: center;
+}
+
 .social_list {
     display: flex;
     justify-content: center;
@@ -13,5 +21,17 @@
 .social_list svg {
     font-size: 1.5em;
     cursor: pointer;
-    color: #034492;
+    color: white;
+    transition: 0.3s;
 }
+
+.social_list svg:hover {
+    color: #FFBB33;
+}
+
+.copyright {
+    margin-top: 2em;
+    font-weight: 200;
+    font-size: 12px;;
+}
+

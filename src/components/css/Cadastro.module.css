@@ -1,3 +1,11 @@
+.ajusteContainer {
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .cadastroContainer {
     width: 30%;
     margin: 30px auto;
@@ -35,8 +43,12 @@
 .cadastroBotao input {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #222;
+    color: white;
     border: none;
-    border-radius: 5px;
     padding: 5px;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
+    width: 30%;
 }

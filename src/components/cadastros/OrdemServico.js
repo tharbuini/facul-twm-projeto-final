@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 function Produtos() {
     return (
-        <>
-        </>
+        <section className={styles.ajusteContainer}>
+        </section>
     )
 };
 

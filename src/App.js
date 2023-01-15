@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from "react";
 
 import Clientes from './components/cadastros/Clientes.js';
@@ -9,25 +9,42 @@ import OrdemServico from './components/cadastros/OrdemServico.js';
 import TiposServico from './components/cadastros/TiposServico.js';
 
 import Home from './components/Home.js'
-import Footer from './components/layout/Footer';
+import Footer from './components/layout/Footer.js';
+import Navbar from './components/layout/Navbar.js';
+// import Container from './components/layout/Container.js';
+import { Container } from "react-bootstrap";
 
 function App() {
     return (
         <div>
-            {/* <Navbar /> */}
+            <Router>
+                <Navbar />
 
-            {/* <BrowserRouter>
-                <Home />
-            </BrowserRouter> */}
+                <Routes> 
+                    {/* <Container> */}
+                    <Route exact path="/" element={<Home />} />
 
-            <Clientes />
-            <Produtos />
-            <Tecnicos />
-            <TiposServico />
+                    <Route exact path="/Clientes" element={<Clientes />} />
 
-            <Footer />
+                    <Route exact path="/produtos" element={<Produtos />} />
 
-            {/* <Footer /> */}
+                    <Route exact path="/tecnicos" element={<Tecnicos />} />
+
+                    <Route exact path="/tiposservico" element={<TiposServico />} />
+
+                    <Route exact path="/ordemservico" element={<OrdemServico />} />
+                    {/* </Container> */}
+                </Routes>
+
+                <Footer />
+            </Router>
+
+            {/* <Clientes />
+                <Produtos />
+                <Tecnicos />
+                <TiposServico /> */}
+
+                
         </div>
     );
 }

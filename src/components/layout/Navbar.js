@@ -1,34 +1,27 @@
 import { Link } from 'react-router-dom'
 import React from "react"
 
+import styles from '../css/Navbar.module.css';
+import logo from '../../img/logo.png';
+
+import Container from './Container.js';
+
 function Navbar() {
 
     return (
-        <div className='styles.navbar'>
-            <React.Fragment>
-            <h1>Projeto - Seguro</h1>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/Clientes">Clientes</Link>
-                </li>
-                <li>
-                    <Link to="/Produtos">Produtos</Link>
-                </li>
-                <li>
-                    <Link to="/Tecnicos">Técnicos</Link>
-                </li>
-                <li>
-                    <Link to="/TiposServico">Tipos de Serviço</Link>
-                </li>
-                <li>
-                    <Link to="/OrdemServico">Ordem de Serviços</Link>
-                </li>
+        <nav className={styles.navbar}>
+            <Link to="/">
+                <img src={logo} alt="Seguro" />
+            </Link>
+            <ul className={styles.list}>
+                <li className={styles.item}><Link to="/">Home</Link></li>
+                <li className={styles.item}><Link to="/clientes">Clientes</Link></li>
+                <li className={styles.item}><Link to="/produtos">Produtos</Link></li>
+                <li className={styles.item}><Link to="/tecnicos">Técnicos</Link></li>
+                <li className={styles.item}><Link to="/tiposservico">Tipos de Serviço</Link></li>
+                <li className={styles.item}><Link to="/ordemservico">Ordem de Serviço</Link></li>
             </ul>
-            </React.Fragment>
-        </div>
+        </nav>
     )
 }
 

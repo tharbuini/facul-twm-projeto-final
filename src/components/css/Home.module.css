@@ -1,0 +1,50 @@
+
+.home_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+}
+
+.home_container h1 {
+    margin-bottom: 5px;
+}
+
+.home_container h1 span {
+    color: white;
+    padding: 0 0.2em;
+    background-color: #034492;
+}
+
+.home_container p {
+    color: #7B7B7B;
+}
+
+.home_container img {
+    width: 350px;
+    background-color: #EFEFEF;
+    margin-left: 6px;
+}
+
+.solicitar_servico {
+    margin-top: 5em;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.solicitar_servico a {
+    color: white;
+    background-color: #034492;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.2s;
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+}
+
+.solicitar_servico a:hover {
+    color: #FFBB33;
+}

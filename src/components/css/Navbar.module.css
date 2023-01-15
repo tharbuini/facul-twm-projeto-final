@@ -1,4 +1,41 @@
 
-/* .navbar {
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #034492;
+}
 
-} */
+.navbar a { 
+    height: 64px;
+    font-weight: bold;
+}
+
+.navbar img {
+    width: 64px;
+    height: 64px;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.item {
+    margin-right: 1em;
+}
+
+.item a {
+    font-size: 18px;
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.item a:hover {
+    color: #FFBB33;
+}
