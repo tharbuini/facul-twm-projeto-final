@@ -33,7 +33,7 @@ function Produtos() {
                                 onChange={(event) => setProductId(event.target.value)} />
                         </div>
 
-                        <div>
+                        {/* <div>
                             <label htmlFor="product_supply">Estoque </label>
                             <input
                                 type="text"
@@ -41,7 +41,7 @@ function Produtos() {
                                 name="product_supply"
                                 placeholder="Digite a quantidade em estoque"
                                 onChange={(event) => setProductSupply(event.target.value)} />
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className={styles.cadastroBotao}>

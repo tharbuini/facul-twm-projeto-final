@@ -6,6 +6,17 @@
     align-items: center;
     justify-content: center;
     min-height: 800px;
+
+    animation: fade 1.5s ease-in 0s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 .home_container h1 {

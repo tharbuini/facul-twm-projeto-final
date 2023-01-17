@@ -15,6 +15,17 @@
     background-color: #034492;
     color: white;
     box-shadow: 0 0 4px 1px #034492;
+
+    animation: fade 0.8s ease-in;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 .cadastroContainer h1 {
