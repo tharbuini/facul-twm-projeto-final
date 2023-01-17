@@ -4,8 +4,6 @@ import React from "react"
 import styles from '../css/Navbar.module.css';
 import logo from '../../img/logo.png';
 
-import Container from './Container.js';
-
 function Navbar() {
 
     return (
