@@ -39,3 +39,27 @@
 .item a:hover {
     color: #FFBB33;
 }
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        align-items: center;
+    }
+    
+    .item {
+        margin-right: 10px;
+    }
+
+    .item a { 
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .item {
+        margin-right: 5px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
