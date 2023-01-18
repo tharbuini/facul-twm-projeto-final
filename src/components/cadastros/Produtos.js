@@ -5,7 +5,7 @@ function Produtos() {
 
     const [product_name, setProductName] = useState();
     const [product_id, setProductId] = useState();
-    const [product_supply, setProductSupply] = useState();
+    const [product_category, setProductCategory] = useState();
 
     return (
         <section className={styles.ajusteContainer}>
@@ -33,15 +33,15 @@ function Produtos() {
                                 onChange={(event) => setProductId(event.target.value)} />
                         </div>
 
-                        {/* <div>
-                            <label htmlFor="product_supply">Estoque </label>
-                            <input
-                                type="text"
-                                id="product_supply"
-                                name="product_supply"
-                                placeholder="Digite a quantidade em estoque"
-                                onChange={(event) => setProductSupply(event.target.value)} />
-                        </div> */}
+                        <div>
+                            <label htmlFor="product_category">Categoria </label>
+                            <select name="oproduct_category" id="product_category" onChange={(event) => setProductCategory(event.target.value)}>
+                                <option value="" selected disabled hidden>Escolha a categoria</option>
+                                <option value="joias">Joias</option>
+                                <option value="veiculos">Veículos</option>
+                                <option value="vida">Vida</option>
+                            </select>
+                            </div>
                     </div>
 
                     <div className={styles.cadastroBotao}>

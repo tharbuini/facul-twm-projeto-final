@@ -53,6 +53,16 @@ function Tecnicos() {
                                 placeholder="Digite sua senha"
                                 onChange={(event) => setTechnicalPassword(event.target.value)} />
                         </div>
+
+                        <div>
+                            <label htmlFor="technical_area">Área de Serviço </label>
+                            <select name="technical_area" id="technical_area">
+                                <option value="" selected disabled hidden>Escolha a categoria</option>
+                                <option value="joias">Joias</option>
+                                <option value="veiculos">Veículos</option>
+                                <option value="vida">Vida</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div className={styles.cadastroBotao}>
