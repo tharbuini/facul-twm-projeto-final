@@ -9,6 +9,7 @@ import OrdemServico from './components/cadastros/OrdemServico.js';
 import TiposServico from './components/cadastros/TiposServico.js';
 
 import Home from './components/Home.js'
+import Cadastro from './components/Cadastro.js'
 import Footer from './components/layout/Footer.js';
 import Navbar from './components/layout/Navbar.js';
 // import Container from './components/layout/Container.js';
@@ -24,7 +25,9 @@ function App() {
                     {/* <Container> */}
                     <Route exact path="/" element={<Home />} />
 
-                    <Route exact path="/Clientes" element={<Clientes />} />
+                    <Route exact path="/cadastro" element={<Cadastro />} />
+
+                    <Route exact path="/clientes" element={<Clientes />} />
 
                     <Route exact path="/produtos" element={<Produtos />} />
 

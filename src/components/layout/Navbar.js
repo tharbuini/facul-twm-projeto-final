@@ -5,7 +5,7 @@ import styles from '../css/Navbar.module.css';
 import logo from '../../img/logo.png';
 
 function Navbar() {
-
+    
     return (
         <nav className={styles.navbar}>
             <Link to="/">
@@ -13,10 +13,16 @@ function Navbar() {
             </Link>
             <ul className={styles.list}>
                 <li className={styles.item}><Link to="/">Home</Link></li>
-                <li className={styles.item}><Link to="/clientes">Clientes</Link></li>
-                <li className={styles.item}><Link to="/produtos">Produtos</Link></li>
-                <li className={styles.item}><Link to="/tecnicos">Técnicos</Link></li>
-                <li className={styles.item}><Link to="/tiposservico">Tipos de Serviço</Link></li>
+
+                <li className={styles.item}><Link to="/cadastro">Cadastro</Link>
+                    {/* 
+                        <li className={styles.item}><Link to="/clientes">Clientes</Link></li>
+                        <li className={styles.item}><Link to="/produtos">Produtos</Link></li>
+                        <li className={styles.item}><Link to="/tecnicos">Técnicos</Link></li>
+                        <li className={styles.item}><Link to="/tiposservico">Tipos de Serviço</Link></li>
+                    */}
+                </li>
+
                 <li className={styles.item}><Link to="/ordemservico">Ordem de Serviço</Link></li>
             </ul>
         </nav>
