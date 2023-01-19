@@ -18,12 +18,29 @@ function OrdemServico() {
                             </div>
 
                             <div>
-                                <label htmlFor="order_category">Categoria do Serviço </label>
+                                <label htmlFor="order_clientname">Cliente </label>
+                                <input
+                                    type="text"
+                                    id="order_clientname"
+                                    name="order_clientname"
+                                    placeholder="Digite o nome do cliente"/>
+                            </div>
+
+                            <div>
+                                <label htmlFor="order_description">Produto </label>
+                                <input
+                                    type="text"
+                                    id="order_productname"
+                                    name="order_productname"
+                                    placeholder="Digite o nome do produto"/>
+                            </div>
+
+                            <div>
+                                <label htmlFor="order_category">Categoria do Produto </label>
                                 <select name="order_category" id="order_category" required>
                                     <option value="" selected disabled hidden>Escolha a categoria</option>
                                     <option value="joias">Joias</option>
                                     <option value="veiculos">Veículos</option>
-                                    <option value="vida">Vida</option>
                                 </select>
                             </div>
                         </div>

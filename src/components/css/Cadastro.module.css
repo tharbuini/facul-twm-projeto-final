@@ -30,9 +30,9 @@
 
 .cadastroContainer h1 {
     text-align: center;
-    width: 40%;
+    width: 80%;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
 }
 
 .cadastroCategorias {
@@ -45,8 +45,8 @@
 .cadastroCategorias li {
     margin: 3px 5px;
     background-color: #034492;
-    padding: 5px;
-    border-radius: 2px;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .cadastroCategorias li a {

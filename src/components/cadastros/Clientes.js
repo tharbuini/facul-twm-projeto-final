@@ -22,7 +22,7 @@ function Clientes() {
                                 type="text"
                                 id="client_name"
                                 name="client_name"
-                                placeholder="Digite seu nome completo"
+                                placeholder="Digite o nome completo do cliente"
                                 onChange={(event) => setClientName(event.target.value)} />
                         </div>
 
@@ -54,26 +54,6 @@ function Clientes() {
                                 name="client_endereco"
                                 placeholder="Digite seu endereço"
                                 onChange={(event) => setClientAddress(event.target.value)} />
-                        </div>
-
-                        <div>
-                            <label htmlFor="client_username">Usuário </label>
-                            <input
-                                type="text"
-                                id="client_username"
-                                name="client_username"
-                                placeholder="Digite seu nome de usuário"
-                                onChange={(event) => setClientUsername(event.target.value)} />
-                        </div>
-
-                        <div>
-                            <label htmlFor="client_password">Senha </label>
-                            <input
-                                type="text"
-                                id="client_password"
-                                name="client_password"
-                                placeholder="Digite sua senha"
-                                onChange={(event) => setClientPassword(event.target.value)} />
                         </div>
                     </div>
 

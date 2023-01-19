@@ -39,7 +39,6 @@ function Produtos() {
                                 <option value="" selected disabled hidden>Escolha a categoria</option>
                                 <option value="joias">Joias</option>
                                 <option value="veiculos">Veículos</option>
-                                <option value="vida">Vida</option>
                             </select>
                             </div>
                     </div>
