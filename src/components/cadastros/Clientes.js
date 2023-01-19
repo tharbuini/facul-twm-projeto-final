@@ -7,8 +7,6 @@ function Clientes() {
     const [client_email, setClientEmail] = useState();
     const [client_celnumber, setClientCelNumber] = useState();
     const [client_address, setClientAddress] = useState();
-    const [client_username, setClientUsername] = useState();
-    const [client_password, setClientPassword] = useState();
 
     return (
         <section className={styles.ajusteContainer}>

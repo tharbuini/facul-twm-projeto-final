@@ -6,7 +6,6 @@ function Tecnicos() {
     const [technical_name, setTechnicalName] = useState();
     const [technical_email, setTechnicalEmail] = useState();
     const [technical_celnumber, setTechnicalCelNumber] = useState();
-    const [technical_password, setTechnicalPassword] = useState();
 
     return (
         <section className={styles.ajusteContainer}>
@@ -50,6 +49,8 @@ function Tecnicos() {
                                 <option value="" selected disabled hidden>Escolha a categoria</option>
                                 <option value="joias">Joias</option>
                                 <option value="veiculos">Veículos</option>
+                                <option value="equipamentos">Equipamentos</option>
+                                <option value="residencial">Residencial</option>
                             </select>
                         </div>
                     </div>

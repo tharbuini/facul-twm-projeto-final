@@ -27,11 +27,20 @@ function OrdemServico() {
                             </div>
 
                             <div>
-                                <label htmlFor="order_description">Produto </label>
+                                <label htmlFor="order_productname">Produto </label>
                                 <input
                                     type="text"
                                     id="order_productname"
                                     name="order_productname"
+                                    placeholder="Digite o nome do produto"/>
+                            </div>
+
+                            <div>
+                                <label htmlFor="order_service">Serviço </label>
+                                <input
+                                    type="text"
+                                    id="order_service"
+                                    name="order_service"
                                     placeholder="Digite o nome do produto"/>
                             </div>
 
@@ -41,6 +50,8 @@ function OrdemServico() {
                                     <option value="" selected disabled hidden>Escolha a categoria</option>
                                     <option value="joias">Joias</option>
                                     <option value="veiculos">Veículos</option>
+                                    <option value="equipamentos">Equipamentos</option>
+                                    <option value="residencial">Residencial</option>
                                 </select>
                             </div>
                         </div>
