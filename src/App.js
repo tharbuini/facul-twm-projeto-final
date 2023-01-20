@@ -12,8 +12,6 @@ import Home from './components/Home.js'
 import Cadastro from './components/Cadastro.js'
 import Footer from './components/layout/Footer.js';
 import Navbar from './components/layout/Navbar.js';
-// import Container from './components/layout/Container.js';
-import { Container } from "react-bootstrap";
 
 function App() {
     return (
@@ -22,7 +20,6 @@ function App() {
                 <Navbar />
 
                 <Routes> 
-                    {/* <Container> */}
                     <Route exact path="/" element={<Home />} />
 
                     <Route exact path="/cadastro" element={<Cadastro />} />
@@ -36,18 +33,10 @@ function App() {
                     <Route exact path="/tiposservico" element={<TiposServico />} />
 
                     <Route exact path="/ordemservico" element={<OrdemServico />} />
-                    {/* </Container> */}
                 </Routes>
 
                 <Footer />
-            </Router>
-
-            {/* <Clientes />
-                <Produtos />
-                <Tecnicos />
-                <TiposServico /> */}
-
-                
+            </Router>  
         </div>
     );
 }
