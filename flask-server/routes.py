@@ -8,14 +8,14 @@ ORDEM_SERVICO = []
 
 urls_blueprint = Blueprint('urls', __name__,)
 
-# @urls_blueprint.route('/')
-# def index():    
-#     global CLIENTES
-#     CLIENTES = []
-#     carrega_cliente()
-#     ret = {"Status": "Backend is running"}
-#     print(CLIENTES)
-#     return ret
+@urls_blueprint.route('/')
+def index():    
+    global CLIENTES
+    CLIENTES = []
+    carrega_cliente()
+    ret = {"Status": "Backend is running"}
+    print(CLIENTES)
+    return ret
 
 ############################## CLIENTE ##############################
 
@@ -32,7 +32,7 @@ def carrega_cliente():
     for i in data['clientes']:        
         CLIENTES.append(i)
 
-@urls_blueprint.route('/clientes', methods = ['POST'])
+@urls_blueprint.route('/cliente', methods = ['POST'])
 def add_cliente():
     global CLIENTES    
     req_data = request.get_json()
@@ -47,7 +47,7 @@ def add_cliente():
            "clientes": CLIENTES}
     return ret
 
-@urls_blueprint.route('/clientes', methods = ['PUT'])
+@urls_blueprint.route('/cliente', methods = ['PUT'])
 def update_cliente_json():
     global CLIENTES
     try:
@@ -73,7 +73,7 @@ def update_cliente_json():
     return ret
 
 
-@urls_blueprint.route('/clientes', methods = ['DELETE'])
+@urls_blueprint.route('/cliente', methods = ['DELETE'])
 def delete_cliente_json():
     global CLIENTES
     try:
@@ -95,7 +95,7 @@ def delete_cliente_json():
     return ret
 
 
-@urls_blueprint.route('/clientes', methods = ['GET'])
+@urls_blueprint.route('/cliente', methods = ['GET'])
 def get_cliente_all():    
     global CLIENTES
     try:

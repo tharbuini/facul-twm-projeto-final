@@ -1,12 +1,12 @@
 import styles from '../css/Cadastro.module.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function Clientes() {
 
-    const [client_name, setClientName] = useState();
-    const [client_address, setClientAddress] = useState();
-    const [client_email, setClientEmail] = useState();
-    const [client_celnumber, setClientCelNumber] = useState();
+    const [client_name, setClientName] = useState("");
+    const [client_address, setClientAddress] = useState("");
+    const [client_email, setClientEmail] = useState("");
+    const [client_celnumber, setClientCelNumber] = useState("");
 
     const client = {
         "nome" : client_name,
@@ -15,9 +15,31 @@ function Clientes() {
         "celular" : client_celnumber
     };
     
-    var data = new FormData();
-    data.append("json", JSON.stringify( client ));
-    
+    const client_json = JSON.stringify(client, null, 4);
+
+    // const data = new FormData();
+    // data.append(client_json);
+
+    const options = {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin" : "http://localhost:5000",
+            "Vary": "Origin"
+        },
+        body: client_json
+      }
+
+
+    function CadastraCliente() {
+        fetch('http://localhost:5000/cliente', options)
+        .then((response) => response)
+        .catch((err) => {
+            console.log(err.message);
+        });
+    }
 
     return (
         <section className={styles.ajusteContainer}>
@@ -68,27 +90,13 @@ function Clientes() {
 
                     <div className={styles.cadastroBotao}>
                         <input 
-                            type="submit" 
+                            type="button" 
                             value="Cadastrar" 
-                            onClick={
-                                useEffect(() => {
-                                    fetch('/clientes', {method: "POST",
-                                                        body: data}
-                                    ).then(
-                                        function(res)
-                                        { 
-                                            return res.json(); 
-                                        }
-                                    ).then(
-                                        function(data)
-                                        { 
-                                            alert( data ) 
-                                        }
-                                    )
-                                }, [])} 
+                            onClick={CadastraCliente}
                         />
                     </div>
                 </form>
+                
             </div>
         </section>
     )
