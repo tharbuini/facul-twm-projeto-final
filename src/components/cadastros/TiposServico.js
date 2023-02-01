@@ -6,6 +6,35 @@ function TiposServico() {
     const [service_name, setServiceName] = useState();
     const [service_id, setServiceId] = useState();
 
+    const service = {
+        "nome" : service_name,
+        "id" : service_id
+    };
+    
+    const service_json = JSON.stringify(service, null, 4);
+
+    const options = {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin" : "http://localhost:5000",
+            "Vary": "Origin",
+            "originWhitelist" : "*"
+        },
+        body: service_json
+      }
+
+
+    function CadastraTipoServico() {
+        fetch('http://localhost:5000/tecnico', options)
+        .then((response) => response)
+        .catch((err) => {
+            console.log(err.message);
+        });
+    }
+
     return (
         <section className={styles.ajusteContainer}>
             <div className={styles.cadastroContainer}>
@@ -23,7 +52,7 @@ function TiposServico() {
                         </div>
 
                         <div>
-                            <label htmlFor="product_id">ID do Serviço </label>
+                            <label htmlFor="service_id">ID do Serviço </label>
                             <input
                                 type="text"
                                 id="service_id"
@@ -34,7 +63,7 @@ function TiposServico() {
                     </div>
 
                     <div className={styles.cadastroBotao}>
-                        <input type="submit" value="Cadastrar" />
+                        <input type="button" value="Cadastrar" onClick={CadastraTipoServico}/>
                     </div>
                 </form>
             </div>

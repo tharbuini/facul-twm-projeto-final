@@ -7,6 +7,38 @@ function Produtos() {
     const [product_id, setProductId] = useState();
     const [product_category, setProductCategory] = useState();
 
+    const product = {
+        "nome" : product_name,
+        "id" : product_id,
+        "categoria" : product_category
+    };
+    
+    const product_json = JSON.stringify(product, null, 4);
+
+    const options = {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin" : "http://localhost:5000",
+            "Vary": "Origin",
+            "originWhitelist" : "*"
+        },
+        body: product_json
+      }
+
+
+    function CadastraProduto() {
+        fetch('http://localhost:5000/produto', options)
+        .then((response) => response)
+        .catch((err) => {
+            console.log(err.message);
+        });
+    }
+
+    //CRIAR FUNCAO GET PARA SELECIONAR UM CLIENTE NO SELECT E ASSOCIAR ELE AO PRODUTO
+
     return (
         <section className={styles.ajusteContainer}>
             <div className={styles.cadastroContainer}>
@@ -46,7 +78,7 @@ function Produtos() {
                     </div>
 
                     <div className={styles.cadastroBotao}>
-                        <input type="submit" value="Cadastrar" />
+                        <input type="button" value="Cadastrar" onClick={CadastraProduto}/>
                     </div>
                 </form>
             </div>
