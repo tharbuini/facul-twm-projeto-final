@@ -35,7 +35,7 @@ def carrega_cliente():
 @urls_blueprint.route('/cliente', methods = ['POST'])
 def add_cliente():
     global CLIENTES    
-    req_data = request.get_json()
+    req_data = request.get_json(force=True)
     clientes_json = {"nome": req_data['nome'], 
                     "endereco": req_data['endereco'], 
                     "email": req_data['email'], 

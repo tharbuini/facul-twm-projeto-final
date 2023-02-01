@@ -17,9 +17,6 @@ function Clientes() {
     
     const client_json = JSON.stringify(client, null, 4);
 
-    // const data = new FormData();
-    // data.append(client_json);
-
     const options = {
         method: 'POST',
         mode: 'no-cors',
@@ -27,7 +24,8 @@ function Clientes() {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             "Access-Control-Allow-Origin" : "http://localhost:5000",
-            "Vary": "Origin"
+            "Vary": "Origin",
+            "originWhitelist" : "*"
         },
         body: client_json
       }
