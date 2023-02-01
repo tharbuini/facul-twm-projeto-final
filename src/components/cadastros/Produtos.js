@@ -6,6 +6,9 @@ function Produtos() {
     const [product_name, setProductName] = useState();
     const [product_id, setProductId] = useState();
     const [product_category, setProductCategory] = useState();
+    const [product_id_rem, setProductIDRemove] = useState();
+
+    // ---------------CADASTRAR---------------
 
     const product = {
         "nome" : product_name,
@@ -17,20 +20,44 @@ function Produtos() {
 
     const options = {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             "Access-Control-Allow-Origin" : "http://localhost:5000",
             "Vary": "Origin",
-            "originWhitelist" : "*"
         },
         body: product_json
-      }
-
+    }
 
     function CadastraProduto() {
         fetch('http://localhost:5000/produto', options)
+        .then((response) => response)
+        .catch((err) => {
+            console.log(err.message);
+        });
+    }
+
+    // ---------------REMOVER----------------
+    
+    const product_remover = {
+        "nome" : product_id_rem
+    }
+
+    const product_remover_json = JSON.stringify(product_remover, null, 4);
+
+    const options_remover = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin" : "*",
+            "Vary": "Origin",
+        },
+        body: product_remover_json
+    }
+
+    function RemoveProduto() {
+        fetch('http://localhost:5000/cliente', options_remover)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);
@@ -67,7 +94,7 @@ function Produtos() {
 
                         <div>
                             <label htmlFor="product_category">Categoria </label>
-                            <select name="oproduct_category" id="product_category" onChange={(event) => setProductCategory(event.target.value)}>
+                            <select name="product_category" id="product_category" onChange={(event) => setProductCategory(event.target.value)}>
                                 <option value="" selected disabled hidden>Escolha a categoria</option>
                                 <option value="joias">Joias</option>
                                 <option value="veiculos">Veículos</option>
@@ -79,6 +106,23 @@ function Produtos() {
 
                     <div className={styles.cadastroBotao}>
                         <input type="button" value="Cadastrar" onClick={CadastraProduto}/>
+                    </div>
+
+                    <div className={styles.cadastroForm}>
+                        <label htmlFor="client_id_rem">ID do Produto </label>
+                                <input
+                                    type="text"
+                                    id="client_id_rem"
+                                    name="client_id_rem"
+                                    placeholder="Digite o ID para remover"
+                                    onChange={(event) => setProductIDRemove(event.target.value)} />
+                        <div className={styles.cadastroBotao}>
+                            <input 
+                                type="button" 
+                                value="Remover" 
+                                onClick={RemoveProduto}
+                            />
+                        </div>
                     </div>
                 </form>
             </div>

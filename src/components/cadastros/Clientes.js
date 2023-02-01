@@ -7,32 +7,59 @@ function Clientes() {
     const [client_address, setClientAddress] = useState("");
     const [client_email, setClientEmail] = useState("");
     const [client_celnumber, setClientCelNumber] = useState("");
+    const [client_name_rem, setClientNameRemove] = useState("");
 
-    const client = {
+    // ---------------CADASTRAR---------------
+
+    const client_cadastro = {
         "nome" : client_name,
         "endereco" : client_address,
         "email" : client_email,
         "celular" : client_celnumber
     };
     
-    const client_json = JSON.stringify(client, null, 4);
+    const client_cadastro_json = JSON.stringify(client_cadastro, null, 4);
 
-    const options = {
+    const options_cadastro = {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             "Access-Control-Allow-Origin" : "http://localhost:5000",
             "Vary": "Origin",
-            "originWhitelist" : "*"
         },
-        body: client_json
-      }
-
+        body: client_cadastro_json
+    }
 
     function CadastraCliente() {
-        fetch('http://localhost:5000/cliente', options)
+        fetch('http://localhost:5000/cliente', options_cadastro)
+        .then((response) => response)
+        .catch((err) => {
+            console.log(err.message);
+        });
+    }
+
+    // ---------------REMOVER----------------
+    
+    const client_remover = {
+        "nome" : client_name_rem
+    }
+
+    const client_remover_json = JSON.stringify(client_remover, null, 4);
+
+    const options_remover = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin" : "*",
+            "Vary": "Origin",
+        },
+        body: client_remover_json
+    }
+
+    function RemoveCliente() {
+        fetch('http://localhost:5000/cliente', options_remover)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);
@@ -92,6 +119,23 @@ function Clientes() {
                             value="Cadastrar" 
                             onClick={CadastraCliente}
                         />
+                    </div>
+                    
+                    <div className={styles.cadastroForm}>
+                        <label htmlFor="client_nome_rem">Nome </label>
+                                <input
+                                    type="text"
+                                    id="client_nome_rem"
+                                    name="client_nome_rem"
+                                    placeholder="Digite o nome para remover"
+                                    onChange={(event) => setClientNameRemove(event.target.value)} />
+                        <div className={styles.cadastroBotao}>
+                            <input 
+                                type="button" 
+                                value="Remover" 
+                                onClick={RemoveCliente}
+                            />
+                        </div>
                     </div>
                 </form>
                 

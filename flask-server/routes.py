@@ -1,4 +1,5 @@
-from flask import Blueprint, request, json, jsonify
+from flask import Blueprint, request, json, jsonify, Flask
+from flask_cors import CORS
 
 CLIENTES = []
 PRODUTOS = []
@@ -47,40 +48,14 @@ def add_cliente():
            "clientes": CLIENTES}
     return ret
 
-@urls_blueprint.route('/cliente', methods = ['PUT'])
-def update_cliente_json():
-    global CLIENTES
-    try:
-        req_data = request.get_json()
-        nome_pesquisa = req_data['nome']
-        tamanho_CLIENTES = len(CLIENTES)
-        for i in range(tamanho_CLIENTES):
-            if (nome_pesquisa in CLIENTES[i]['nome']):
-                print("Achei!!!")
-                print({"nome": req_data['nome']})
-                CLIENTES[i]['nome']     = req_data['novo_nome']
-                CLIENTES[i]['endereco'] = req_data['endereco']
-                CLIENTES[i]['email'] = req_data['email']
-                CLIENTES[i]['celular']  = req_data['celular']
-                ret = {"status": "Cliente encontrado",
-                "clientes": CLIENTES[i]}
-                break
-            else:
-                ret = {"status": "Cliente não encontrado"}
-
-    except Exception as e:
-        ret = {"status": "Cliente não encontrado"}
-    return ret
-
-
 @urls_blueprint.route('/cliente', methods = ['DELETE'])
 def delete_cliente_json():
     global CLIENTES
     try:
-        req_data = request.get_json()
+        req_data = request.get_json(force=True)
         nome_pesquisa = req_data['nome']
         tamanho_CLIENTES = len(CLIENTES)
-        posicao = 0
+        i = 0
         for i in range(tamanho_CLIENTES):
             if (nome_pesquisa in CLIENTES[i]['nome']):
                 print("Achei!!!")
@@ -117,6 +92,34 @@ def get_cliente_all():
         ret = {"status": "Lista de clientes",
         "clientes": CLIENTES}
     return ret
+
+
+@urls_blueprint.route('/cliente', methods = ['PUT'])
+def update_cliente_json():
+    global CLIENTES
+    try:
+        req_data = request.get_json()
+        nome_pesquisa = req_data['nome']
+        tamanho_CLIENTES = len(CLIENTES)
+        for i in range(tamanho_CLIENTES):
+            if (nome_pesquisa in CLIENTES[i]['nome']):
+                print("Achei!!!")
+                print({"nome": req_data['nome']})
+                CLIENTES[i]['nome']     = req_data['novo_nome']
+                CLIENTES[i]['endereco'] = req_data['endereco']
+                CLIENTES[i]['email'] = req_data['email']
+                CLIENTES[i]['celular']  = req_data['celular']
+                ret = {"status": "Cliente encontrado",
+                "clientes": CLIENTES[i]}
+                break
+            else:
+                ret = {"status": "Cliente não encontrado"}
+
+    except Exception as e:
+        ret = {"status": "Cliente não encontrado"}
+    return ret
+
+
 
 ############################## PRODUTOS ##############################
 
