@@ -7,19 +7,21 @@ function Tecnicos() {
     const [technical_email, setTechnicalEmail] = useState();
     const [technical_celnumber, setTechnicalCelNumber] = useState();
     const [technical_area, setTechnicalArea] = useState();
+    const [technical_name_rem, setTechnicalNameRemove] = useState();
 
-    const technical = {
+    // ---------------CADASTRAR---------------
+
+    const technical_cadastro = {
         "nome" : technical_name,
         "email" : technical_email,
         "celular" : technical_celnumber,
         "area-servico" : technical_area
     };
     
-    const technical_json = JSON.stringify(technical, null, 4);
+    const technical_cadastro_json = JSON.stringify(technical_cadastro, null, 4);
 
-    const options = {
+    const options_cadastro = {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -27,12 +29,39 @@ function Tecnicos() {
             "Vary": "Origin",
             "originWhitelist" : "*"
         },
-        body: technical_json
+        body: technical_cadastro_json
       }
 
 
     function CadastraTecnico() {
-        fetch('http://localhost:5000/tecnico', options)
+        fetch('http://localhost:5000/tecnico', options_cadastro)
+        .then((response) => response)
+        .catch((err) => {
+            console.log(err.message);
+        });
+    }
+
+    // ---------------REMOVER----------------
+    
+    const technical_remover = {
+        "nome" : technical_name_rem
+    }
+
+    const technical_remover_json = JSON.stringify(technical_remover, null, 4);
+
+    const options_remover = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin" : "*",
+            "Vary": "Origin",
+        },
+        body: technical_remover_json
+    }
+
+    function RemoveTecnico() {
+        fetch('http://localhost:5000/cliente', options_remover)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);
@@ -92,6 +121,23 @@ function Tecnicos() {
 
                     <div className={styles.cadastroBotao}>
                         <input type="button" value="Cadastrar" onClick={CadastraTecnico} />
+                    </div>
+
+                    <div className={styles.cadastroForm}>
+                        <label htmlFor="tecnico_nome_rem">Nome do Técnico </label>
+                                <input
+                                    type="text"
+                                    id="tecnico_nome_rem"
+                                    name="tecnico_nome_rem"
+                                    placeholder="Digite o nome para remover"
+                                    onChange={(event) => setTechnicalNameRemove(event.target.value)} />
+                        <div className={styles.cadastroBotao}>
+                            <input 
+                                type="button" 
+                                value="Remover" 
+                                onClick={RemoveTecnico}
+                            />
+                        </div>
                     </div>
                 </form>
             </div>

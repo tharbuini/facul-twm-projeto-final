@@ -10,15 +10,15 @@ function Produtos() {
 
     // ---------------CADASTRAR---------------
 
-    const product = {
+    const product_cadastro = {
         "nome" : product_name,
         "id" : product_id,
         "categoria" : product_category
     };
     
-    const product_json = JSON.stringify(product, null, 4);
+    const product_cadastro_json = JSON.stringify(product_cadastro, null, 4);
 
-    const options = {
+    const options_cadastro = {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -26,11 +26,11 @@ function Produtos() {
             "Access-Control-Allow-Origin" : "http://localhost:5000",
             "Vary": "Origin",
         },
-        body: product_json
+        body: product_cadastro_json
     }
 
     function CadastraProduto() {
-        fetch('http://localhost:5000/produto', options)
+        fetch('http://localhost:5000/produto', options_cadastro)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);
@@ -109,11 +109,11 @@ function Produtos() {
                     </div>
 
                     <div className={styles.cadastroForm}>
-                        <label htmlFor="client_id_rem">ID do Produto </label>
+                        <label htmlFor="product_id_rem">ID do Produto </label>
                                 <input
                                     type="text"
-                                    id="client_id_rem"
-                                    name="client_id_rem"
+                                    id="product_id_rem"
+                                    name="product_id_rem"
                                     placeholder="Digite o ID para remover"
                                     onChange={(event) => setProductIDRemove(event.target.value)} />
                         <div className={styles.cadastroBotao}>

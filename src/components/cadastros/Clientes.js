@@ -122,7 +122,7 @@ function Clientes() {
                     </div>
                     
                     <div className={styles.cadastroForm}>
-                        <label htmlFor="client_nome_rem">Nome </label>
+                        <label htmlFor="client_nome_rem">Nome do Cliente </label>
                                 <input
                                     type="text"
                                     id="client_nome_rem"
@@ -138,7 +138,6 @@ function Clientes() {
                         </div>
                     </div>
                 </form>
-                
             </div>
         </section>
     )
