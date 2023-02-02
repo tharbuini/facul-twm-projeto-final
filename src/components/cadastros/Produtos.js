@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 function Produtos() {
 
-    const [product_name, setProductName] = useState();
-    const [product_id, setProductId] = useState();
-    const [product_category, setProductCategory] = useState();
-    const [product_id_rem, setProductIDRemove] = useState();
+    const [product_name, setProductName] = useState("");
+    const [product_id, setProductId] = useState("");
+    const [product_category, setProductCategory] = useState("");
+    const [product_id_rem, setProductIDRemove] = useState("");
 
     // ---------------CADASTRAR---------------
 
@@ -57,7 +57,7 @@ function Produtos() {
     }
 
     function RemoveProduto() {
-        fetch('http://localhost:5000/cliente', options_remover)
+        fetch('http://localhost:5000/produto', options_remover)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);

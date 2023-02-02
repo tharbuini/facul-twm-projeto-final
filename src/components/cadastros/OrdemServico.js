@@ -3,13 +3,13 @@ import { useState } from 'react';
 
 function OrdemServico() {
 
-    const [order_id, setOrderID] = useState();
-    const [order_description, setOrderDescription] = useState();
-    const [order_clientname, setOrderClientName] = useState();
-    const [order_productname, setOrderProduct] = useState();
-    const [order_service, setOrderService] = useState();
-    const [order_category, setOrderCategory] = useState();
-    const [order_id_rem, setOrderIDRemove] = useState();
+    const [order_id, setOrderID] = useState("");
+    const [order_description, setOrderDescription] = useState("");
+    const [order_clientname, setOrderClientName] = useState("");
+    const [order_productname, setOrderProduct] = useState("");
+    const [order_service, setOrderService] = useState("");
+    const [order_category, setOrderCategory] = useState("");
+    const [order_id_rem, setOrderIDRemove] = useState("");
 
     // ---------------CADASTRAR----------------
 
@@ -30,15 +30,14 @@ function OrdemServico() {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             "Access-Control-Allow-Origin" : "http://localhost:5000",
-            "Vary": "Origin",
-            "originWhitelist" : "*"
+            "Vary": "Origin"
         },
         body: order_cadastro_json
       }
 
 
     function CadastraOrdemServico() {
-        fetch('http://localhost:5000/tecnico', options_cadastro)
+        fetch('http://localhost:5000/ordens-servico', options_cadastro)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);
@@ -65,7 +64,7 @@ function OrdemServico() {
     }
 
     function RemoveOrdem() {
-        fetch('http://localhost:5000/cliente', options_remover)
+        fetch('http://localhost:5000/ordens-servico', options_remover)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);

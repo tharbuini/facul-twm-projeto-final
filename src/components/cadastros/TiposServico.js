@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 function TiposServico() {
 
-    const [service_name, setServiceName] = useState();
-    const [service_id, setServiceId] = useState();
-    const [service_id_rem, setServiceIDRemove] = useState();
+    const [service_name, setServiceName] = useState("");
+    const [service_id, setServiceId] = useState("");
+    const [service_id_rem, setServiceIDRemove] = useState("");
     
     // ---------------CADASTRAR---------------
 
@@ -30,7 +30,7 @@ function TiposServico() {
 
 
     function CadastraTipoServico() {
-        fetch('http://localhost:5000/tecnico', options_cadastro)
+        fetch('http://localhost:5000/tipos-servico', options_cadastro)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);
@@ -57,7 +57,7 @@ function TiposServico() {
     }
 
     function RemoveServico() {
-        fetch('http://localhost:5000/cliente', options_remover)
+        fetch('http://localhost:5000/tipos-servico', options_remover)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);

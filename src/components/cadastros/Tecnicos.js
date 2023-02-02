@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 function Tecnicos() {
 
-    const [technical_name, setTechnicalName] = useState();
-    const [technical_email, setTechnicalEmail] = useState();
-    const [technical_celnumber, setTechnicalCelNumber] = useState();
-    const [technical_area, setTechnicalArea] = useState();
-    const [technical_name_rem, setTechnicalNameRemove] = useState();
+    const [technical_name, setTechnicalName] = useState("");
+    const [technical_email, setTechnicalEmail] = useState("");
+    const [technical_celnumber, setTechnicalCelNumber] = useState("");
+    const [technical_area, setTechnicalArea] = useState("");
+    const [technical_name_rem, setTechnicalNameRemove] = useState("");
 
     // ---------------CADASTRAR---------------
 
@@ -61,7 +61,7 @@ function Tecnicos() {
     }
 
     function RemoveTecnico() {
-        fetch('http://localhost:5000/cliente', options_remover)
+        fetch('http://localhost:5000/tecnico', options_remover)
         .then((response) => response)
         .catch((err) => {
             console.log(err.message);
