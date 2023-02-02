@@ -1,5 +1,134 @@
 {
     "tipos-servico": [
-      
+        {
+            "descricao": "Acidentes por colisão ou choque",
+            "id": "1",
+            "area": "veiculos"
+        },
+        {
+            "descricao": "Perda total ou parcial do veículo por explosão, incêndio, alagamento, etc",
+            "id": "2",
+            "area": "veiculos"
+        },
+        {
+            "descricao": "Roubo ou furto do veículo ou partes dele",
+            "id": "3",
+            "area": "veiculos"
+        },
+        {
+            "descricao": "Danos materiais causados por terceiros",
+            "id": "4",
+            "area": "veiculos"
+        },
+        {
+            "descricao": "Danos causados a terceiros",
+            "id": "5",
+            "area": "veiculos"
+        },
+        {
+            "descricao": "Roubo ou furto do equipamento",
+            "id": "6",
+            "area": "equipamentos"
+        },
+        {
+            "descricao": "Quebra acidental",
+            "id": "7",
+            "area": "equipamentos"
+        },
+        {
+            "descricao": "Oxidação do aparelho",
+            "id": "8",
+            "area": "equipamentos"
+        },
+        {
+            "descricao": "Danos elétricos durante a carga",
+            "id": "9",
+            "area": "equipamentos"
+        },
+        {
+            "descricao": "Derramamento de líquidos",
+            "id": "10",
+            "area": "equipamentos"
+        },
+        {
+            "descricao": "Furto ou roubo de bens na residência",
+            "id": "11",
+            "area": "residencial"
+        },
+        {
+            "descricao": "Danos causados por fenômenos climáticos e naturais como granizo, raios, deslizamentos, terremotos, ciclones, vendavais, etc",
+            "id": "12",
+            "area": "residencial"
+        },
+        {
+            "descricao": "Danos estruturais e em sistemas elétrico e hidráulico",
+            "id": "13",
+            "area": "residencial"
+        },
+        {
+            "descricao": "Incêndio, fumaça, alagamento, explosão, etc",
+            "id": "14",
+            "area": "residencial"
+        },
+        {
+            "descricao": "Quebra de vidros em geral",
+            "id": "15",
+            "area": "residencial"
+        },
+        {
+            "descricao": "Acidentes pessoais durante a viagem",
+            "id": "16",
+            "area": "viagem"
+        },
+        {
+            "descricao": "Invalidez permanente por acidente",
+            "id": "17",
+            "area": "viagem"
+        },
+        {
+            "descricao": "Assistência médica e odontológica",
+            "id": "18",
+            "area": "viagem"
+        },
+        {
+            "descricao": "Medicamentos",
+            "id": "19",
+            "area": "viagem"
+        },
+        {
+            "descricao": "Consultas e exames",
+            "id": "20",
+            "area": "saude"
+        },
+        {
+            "descricao": "Serviços ambulatoriais",
+            "id": "21",
+            "area": "saude"
+        },
+        {
+            "descricao": "Atendimento emergencial",
+            "id": "22",
+            "area": "saude"
+        },
+        {
+            "descricao": "Pré-natal e obstetrícia",
+            "id": "23",
+            "area": "saude"
+        },
+        {
+            "descricao": "Terapias",
+            "id": "24",
+            "area": "saude"
+        },
+        {
+            "descricao": "Internações",
+            "id": "25",
+            "area": "saude"
+        },
+        {
+            "descricao": "Procedimentos cirúrgicos",
+            "id": "26",
+            "area": "saude"
+        }
     ]
 }

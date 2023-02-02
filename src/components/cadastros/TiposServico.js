@@ -3,15 +3,17 @@ import { useState } from 'react';
 
 function TiposServico() {
 
-    const [service_name, setServiceName] = useState("");
+    const [service_description, setDescriptionName] = useState("");
     const [service_id, setServiceId] = useState("");
+    const [service_area, setServiceArea] = useState("");
     const [service_id_rem, setServiceIDRemove] = useState("");
     
     // ---------------CADASTRAR---------------
 
     const service_cadastro = {
-        "nome" : service_name,
-        "id" : service_id
+        "descricao" : service_description,
+        "id" : service_id,
+        "area": service_area
     };
     
     const service_cadastro_json = JSON.stringify(service_cadastro, null, 4);
@@ -40,7 +42,7 @@ function TiposServico() {
     // ---------------REMOVER----------------
     
     const service_remover = {
-        "nome" : service_id_rem
+        "id" : service_id_rem
     }
 
     const service_remover_json = JSON.stringify(service_remover, null, 4);
@@ -67,18 +69,18 @@ function TiposServico() {
     return (
         <section className={styles.ajusteContainer}>
             <div className={styles.cadastroContainer}>
-                <h1>Cadastro de Serviço</h1>
+                <h1>Cadastro de Serviço de Cobertura</h1>
                 <form>
                     <div className={styles.cadastroForm}>
                         <div>
-                            <label htmlFor="service_name">Nome do Serviço </label>
+                            <label htmlFor="service_description">Nome do Serviço de Cobertura</label>
                             <input
                                 type="text"
-                                id="service_name"
-                                name="service_name"
-                                placeholder="Digite o nome do serviço"
+                                id="service_description"
+                                name="service_description"
+                                placeholder="Digite a descrição do serviço"
                                 autocomplete="off"
-                                onChange={(event) => setServiceName(event.target.value)} />
+                                onChange={(event) => setDescriptionName(event.target.value)} />
                         </div>
 
                         <div>
@@ -90,6 +92,21 @@ function TiposServico() {
                                 placeholder="Digite o ID do serviço"
                                 autocomplete="off"
                                 onChange={(event) => setServiceId(event.target.value)} />
+                        </div>
+
+                        <div>
+                            <label htmlFor="service_area">Área de Serviço </label>
+                            <select 
+                                name="service_area" 
+                                id="service_area" 
+                                onChange={(event) => setServiceArea(event.target.value)}>
+                                <option value="" selected disabled hidden>Escolha a categoria</option>
+                                <option value="veiculos">Veículos</option>
+                                <option value="equipamentos">Equipamentos</option>
+                                <option value="residencial">Moradia</option>
+                                <option value="viagem">Viagem</option>
+                                <option value="saude">Saúde</option>
+                            </select>
                         </div>
                     </div>
 

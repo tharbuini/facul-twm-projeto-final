@@ -4,6 +4,8 @@ import { useState } from 'react';
 function Produtos() {
 
     const [product_name, setProductName] = useState("");
+    const [product_client_name, setProductClientName] = useState("");
+    const [product_description, setProductDescription] = useState("");
     const [product_id, setProductId] = useState("");
     const [product_category, setProductCategory] = useState("");
     const [product_id_rem, setProductIDRemove] = useState("");
@@ -12,6 +14,8 @@ function Produtos() {
 
     const product_cadastro = {
         "nome" : product_name,
+        "nome-cliente": product_client_name,
+        "descricao": product_description,
         "id" : product_id,
         "categoria" : product_category
     };
@@ -40,7 +44,7 @@ function Produtos() {
     // ---------------REMOVER----------------
     
     const product_remover = {
-        "nome" : product_id_rem
+        "id" : product_id_rem
     }
 
     const product_remover_json = JSON.stringify(product_remover, null, 4);
@@ -82,6 +86,28 @@ function Produtos() {
                         </div>
 
                         <div>
+                            <label htmlFor="product_client_name">Nome do Cliente Solicitante </label>
+                            <input
+                                type="text"
+                                id="product_client_name"
+                                name="product_client_name"
+                                placeholder="Digite o nome do cliente"
+                                autocomplete="off"
+                                onChange={(event) => setProductClientName(event.target.value)} />
+                        </div>
+
+                        <div>
+                            <label htmlFor="product_description">Descrição do Produto </label>
+                            <input
+                                type="text"
+                                id="product_description"
+                                name="product_description"
+                                placeholder="Digite a descrição do produto"
+                                autocomplete="off"
+                                onChange={(event) => setProductDescription(event.target.value)} />
+                        </div>
+
+                        <div>
                             <label htmlFor="product_id">ID do Produto </label>
                             <input
                                 type="text"
@@ -96,12 +122,13 @@ function Produtos() {
                             <label htmlFor="product_category">Categoria </label>
                             <select name="product_category" id="product_category" onChange={(event) => setProductCategory(event.target.value)}>
                                 <option value="" selected disabled hidden>Escolha a categoria</option>
-                                <option value="joias">Joias</option>
                                 <option value="veiculos">Veículos</option>
                                 <option value="equipamentos">Equipamentos</option>
-                                <option value="residencial">Residencial</option>
+                                <option value="residencial">Moradia</option>
+                                <option value="viagem">Viagem</option>
+                                <option value="saude">Saúde</option>
                             </select>
-                            </div>
+                        </div>
                     </div>
 
                     <div className={styles.cadastroBotao}>

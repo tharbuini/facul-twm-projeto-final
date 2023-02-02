@@ -7,7 +7,7 @@ function OrdemServico() {
     const [order_description, setOrderDescription] = useState("");
     const [order_clientname, setOrderClientName] = useState("");
     const [order_productname, setOrderProduct] = useState("");
-    const [order_service, setOrderService] = useState("");
+    const [order_id_service, setOrderIDService] = useState("");
     const [order_category, setOrderCategory] = useState("");
     const [order_id_rem, setOrderIDRemove] = useState("");
 
@@ -18,7 +18,7 @@ function OrdemServico() {
         "descricao" : order_description,
         "nome-cliente" : order_clientname,
         "nome-produto" : order_productname,
-        "servico" : order_service,
+        "id-servico" : order_id_service,
         "categoria" : order_category,
     };
     
@@ -83,7 +83,7 @@ function OrdemServico() {
                                 type="text"
                                 id="order_id"
                                 name="order_id"
-                                placeholder="Digite sua solicitação"
+                                placeholder="Digite o ID da ordem"
                                 autocomplete="off"
                                 onChange={(event) => setOrderID(event.target.value)} />
                         </div>
@@ -122,30 +122,31 @@ function OrdemServico() {
                         </div>
 
                         <div>
-                            <label htmlFor="order_service">Serviço </label>
+                            <label htmlFor="order_service">ID do Serviço </label>
                             <input
                                 type="text"
-                                id="order_service"
-                                name="order_service"
-                                placeholder="Digite o nome do produto"
+                                id="order_id_service"
+                                name="order_id_service"
+                                placeholder="Digite o ID do serviço de cobertura"
                                 autocomplete="off"
-                                onChange={(event) => setOrderService(event.target.value)} />
+                                onChange={(event) => setOrderIDService(event.target.value)} />
                         </div>
 
                         <div>
                             <label htmlFor="order_category">Categoria do Produto </label>
                             <select name="order_category" id="order_category" required onChange={(event) => setOrderCategory(event.target.value)}>
                                 <option value="" selected disabled hidden>Escolha a categoria</option>
-                                <option value="joias">Joias</option>
                                 <option value="veiculos">Veículos</option>
                                 <option value="equipamentos">Equipamentos</option>
-                                <option value="residencial">Residencial</option>
+                                <option value="residencial">Moradia</option>
+                                <option value="viagem">Viagem</option>
+                                <option value="saude">Saúde</option>
                             </select>
                         </div>
                     </div>
 
                     <div className={styles.solicitaBotao}>
-                        <input type="button" value="Cadastrar" onClick={CadastraOrdemServico}/>
+                        <input type="button" value="Cadastrar" onClick={CadastraOrdemServico} />
                     </div>
 
                     <div className={styles.solicitaForm}>

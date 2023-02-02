@@ -115,6 +115,8 @@ def add_produto():
     global PRODUTOS    
     req_data = request.get_json(force=True)
     produtos_json = {"nome": req_data['nome'], 
+                     "nome-cliente": req_data['nome-cliente'], 
+                     "descricao": req_data['descricao'],
                      "id": req_data['id'], 
                      "categoria": req_data['categoria']}
 
@@ -263,8 +265,9 @@ def carrega_tiposervico():
 def add_tipos_servico():
     global TIPOS_SERVICO    
     req_data = request.get_json(force=True)
-    tipos_servico_json = {"nome": req_data['nome'], 
-                          "id": req_data['id']}
+    tipos_servico_json = {"descricao": req_data['descricao'], 
+                          "id": req_data['id'],
+                          "area": req_data['area']}
 
     print(tipos_servico_json)
     TIPOS_SERVICO.append(tipos_servico_json)
@@ -310,7 +313,7 @@ def get_tipos_servico_all():
                 break
             else:
                 ret = {"status": "Tipo de serviço não encontrado",
-               "tipos-servico": []}
+                "tipos-servico": []}
 
     except Exception as e:
         ret = {"status": "Lista de tipos de servico",
@@ -340,7 +343,7 @@ def add_ordens_servico():
                            "descricao": req_data['descricao'],
                            "nome-cliente": req_data['nome-cliente'],
                            "nome-produto": req_data['nome-produto'],
-                           "servico": req_data['servico'],
+                           "id-servico": req_data['id-servico'],
                            "categoria": req_data['categoria']}
 
     print(ordens_servico_json)

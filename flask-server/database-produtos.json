@@ -1,5 +1,11 @@
 {
     "produtos": [
-      
+        {
+            "categoria": "veiculos",
+            "descricao": "Veiculo prata, placa THK2239",
+            "id": "1",
+            "nome": "Ford Ka",
+            "nome-cliente": "Thiago Henrique Arbuini Rodrigues"
+        }
     ]
 }

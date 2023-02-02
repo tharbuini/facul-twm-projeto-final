@@ -114,10 +114,11 @@ function Tecnicos() {
                                 id="technical_area" 
                                 onChange={(event) => setTechnicalArea(event.target.value)}>
                                 <option value="" selected disabled hidden>Escolha a categoria</option>
-                                <option value="joias">Joias</option>
                                 <option value="veiculos">Veículos</option>
                                 <option value="equipamentos">Equipamentos</option>
-                                <option value="residencial">Residencial</option>
+                                <option value="residencial">Moradia</option>
+                                <option value="viagem">Viagem</option>
+                                <option value="saude">Saúde</option>
                             </select>
                         </div>
                     </div>
