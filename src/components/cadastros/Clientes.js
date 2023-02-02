@@ -79,6 +79,7 @@ function Clientes() {
                                 id="client_name"
                                 name="client_name"
                                 placeholder="Digite o nome completo do cliente"
+                                autocomplete="off"
                                 onChange={(event) => setClientName(event.target.value)} />
                         </div>
 
@@ -89,6 +90,7 @@ function Clientes() {
                                 id="client_endereco"
                                 name="client_endereco"
                                 placeholder="Digite seu endereço"
+                                autocomplete="off"
                                 onChange={(event) => setClientAddress(event.target.value)} />
                         </div>
 
@@ -99,6 +101,7 @@ function Clientes() {
                                 id="client_email"
                                 name="client_email"
                                 placeholder="Digite seu melhor email"
+                                autocomplete="off"
                                 onChange={(event) => setClientEmail(event.target.value)} />
                         </div>
 
@@ -109,6 +112,7 @@ function Clientes() {
                                 id="client_celnumber"
                                 name="client_celnumber"
                                 placeholder="Digite seu número de celular"
+                                autocomplete="off"
                                 onChange={(event) => setClientCelNumber(event.target.value)} />
                         </div>
                     </div>
@@ -128,6 +132,7 @@ function Clientes() {
                                     id="client_nome_rem"
                                     name="client_nome_rem"
                                     placeholder="Digite o nome para remover"
+                                    autocomplete="off"
                                     onChange={(event) => setClientNameRemove(event.target.value)} />
                         <div className={styles.cadastroBotao}>
                             <input 

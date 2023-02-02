@@ -64,8 +64,6 @@ function Produtos() {
         });
     }
 
-    //CRIAR FUNCAO GET PARA SELECIONAR UM CLIENTE NO SELECT E ASSOCIAR ELE AO PRODUTO
-
     return (
         <section className={styles.ajusteContainer}>
             <div className={styles.cadastroContainer}>
@@ -79,6 +77,7 @@ function Produtos() {
                                 id="product_name"
                                 name="product_name"
                                 placeholder="Digite o nome do produto"
+                                autocomplete="off"
                                 onChange={(event) => setProductName(event.target.value)} />
                         </div>
 
@@ -89,6 +88,7 @@ function Produtos() {
                                 id="product_id"
                                 name="product_id"
                                 placeholder="Digite o ID do produto"
+                                autocomplete="off"
                                 onChange={(event) => setProductId(event.target.value)} />
                         </div>
 
@@ -115,6 +115,7 @@ function Produtos() {
                                     id="product_id_rem"
                                     name="product_id_rem"
                                     placeholder="Digite o ID para remover"
+                                    autocomplete="off"
                                     onChange={(event) => setProductIDRemove(event.target.value)} />
                         <div className={styles.cadastroBotao}>
                             <input 

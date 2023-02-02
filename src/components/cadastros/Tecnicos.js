@@ -81,6 +81,7 @@ function Tecnicos() {
                                 id="technical_name"
                                 name="technical_name"
                                 placeholder="Digite o nome completo"
+                                autocomplete="off"
                                 onChange={(event) => setTechnicalName(event.target.value)} />
                         </div>
 
@@ -91,6 +92,7 @@ function Tecnicos() {
                                 id="technical_email"
                                 name="technical_email"
                                 placeholder="Digite o email do técnico"
+                                autocomplete="off"
                                 onChange={(event) => setTechnicalEmail(event.target.value)} />
                         </div>
 
@@ -101,6 +103,7 @@ function Tecnicos() {
                                 id="technical_celnumber"
                                 name="technical_celnumber"
                                 placeholder="Digite seu número de celular"
+                                autocomplete="off"
                                 onChange={(event) => setTechnicalCelNumber(event.target.value)} />
                         </div>
 
@@ -130,6 +133,7 @@ function Tecnicos() {
                                     id="tecnico_nome_rem"
                                     name="tecnico_nome_rem"
                                     placeholder="Digite o nome para remover"
+                                    autocomplete="off"
                                     onChange={(event) => setTechnicalNameRemove(event.target.value)} />
                         <div className={styles.cadastroBotao}>
                             <input 

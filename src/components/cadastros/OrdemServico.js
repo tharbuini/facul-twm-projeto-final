@@ -33,7 +33,7 @@ function OrdemServico() {
             "Vary": "Origin"
         },
         body: order_cadastro_json
-      }
+    }
 
 
     function CadastraOrdemServico() {
@@ -84,6 +84,7 @@ function OrdemServico() {
                                 id="order_id"
                                 name="order_id"
                                 placeholder="Digite sua solicitação"
+                                autocomplete="off"
                                 onChange={(event) => setOrderID(event.target.value)} />
                         </div>
 
@@ -94,6 +95,7 @@ function OrdemServico() {
                                 id="order_description"
                                 name="order_description"
                                 placeholder="Digite sua solicitação"
+                                autocomplete="off"
                                 onChange={(event) => setOrderDescription(event.target.value)} />
                         </div>
 
@@ -104,6 +106,7 @@ function OrdemServico() {
                                 id="order_clientname"
                                 name="order_clientname"
                                 placeholder="Digite o nome do cliente"
+                                autocomplete="off"
                                 onChange={(event) => setOrderClientName(event.target.value)} />
                         </div>
 
@@ -114,6 +117,7 @@ function OrdemServico() {
                                 id="order_productname"
                                 name="order_productname"
                                 placeholder="Digite o nome do produto"
+                                autocomplete="off"
                                 onChange={(event) => setOrderProduct(event.target.value)} />
                         </div>
 
@@ -124,6 +128,7 @@ function OrdemServico() {
                                 id="order_service"
                                 name="order_service"
                                 placeholder="Digite o nome do produto"
+                                autocomplete="off"
                                 onChange={(event) => setOrderService(event.target.value)} />
                         </div>
 
@@ -150,6 +155,7 @@ function OrdemServico() {
                                     id="order_id_rem"
                                     name="order_id_rem"
                                     placeholder="Digite o ID para remover"
+                                    autocomplete="off"
                                     onChange={(event) => setOrderIDRemove(event.target.value)} />
                         <div className={styles.solicitaBotao}>
                             <input 

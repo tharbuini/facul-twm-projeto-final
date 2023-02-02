@@ -77,6 +77,7 @@ function TiposServico() {
                                 id="service_name"
                                 name="service_name"
                                 placeholder="Digite o nome do serviço"
+                                autocomplete="off"
                                 onChange={(event) => setServiceName(event.target.value)} />
                         </div>
 
@@ -87,6 +88,7 @@ function TiposServico() {
                                 id="service_id"
                                 name="service_id"
                                 placeholder="Digite o ID do serviço"
+                                autocomplete="off"
                                 onChange={(event) => setServiceId(event.target.value)} />
                         </div>
                     </div>
@@ -102,6 +104,7 @@ function TiposServico() {
                                     id="service_id_rem"
                                     name="service_id_rem"
                                     placeholder="Digite o ID para remover"
+                                    autocomplete="off"
                                     onChange={(event) => setServiceIDRemove(event.target.value)} />
                         <div className={styles.cadastroBotao}>
                             <input 
